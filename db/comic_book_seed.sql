@@ -1,0 +1,60 @@
+DELETE FROM comic_book;
+
+INSERT INTO comic_book (
+    comic_book_name,
+    year,
+    issue,
+    generation_id,
+    publisher_id,
+    creator_id,
+    character_id,
+    writer_id,
+    artist_id,
+    color_artist_id,
+    cover_artist_id,
+    penciler_id,
+    inker_id,
+    letterer_id,
+    design_id,
+    editor_id,
+    editor_in_chief_id
+)
+VALUES 
+(
+    'Daredevil Born Again: Apocalypse',
+    1964,
+    227,
+    (SELECT id FROM generation WHERE generation_name = 'Silver Age'),
+    (SELECT id FROM publisher WHERE publisher_name = 'Marvel Comics'),
+    (SELECT id FROM creators WHERE creator_first_name = 'Stan' AND creator_last_name = 'Lee'),
+    (SELECT id FROM characters WHERE character_name = 'Daredevil'),
+    (SELECT id FROM writers WHERE writer_first_name = 'Frank' AND writer_last_name = 'Miller'),
+    (SELECT id FROM artists WHERE artist_first_name = 'David' AND artist_last_name = 'Mazzucchelli'),
+    (SELECT id FROM color_artists WHERE color_artists_first_name = 'Christie' AND color_artists_last_name = 'Scheele'),
+    (SELECT id FROM cover_artists WHERE cover_artists_first_name = 'David' AND cover_artists_last_name = 'Mazzucchelli'),
+    (SELECT id FROM pencilers WHERE pencilers_first_name = 'David' AND pencilers_last_name = 'Mazzucchelli'),
+    (SELECT id FROM inker WHERE inker_first_name = 'Klaus' AND inker_last_name = 'Janson'),
+    (SELECT id FROM letterer WHERE letterer_first_name = 'Joe' AND letterer_last_name = 'Rosen'),
+    NULL,
+    (SELECT id FROM editor WHERE editor_first_name = 'Ralph' AND editor_last_name = 'Macchio'),
+    (SELECT id FROM editor_in_chief WHERE editor_in_chief_first_name = 'Jim' AND editor_in_chief_last_name = 'Shooter')
+), 
+(
+    'Hawkeye: The Saga of Barton And Bishop',
+    2012,
+    1,
+    (SELECT id FROM generation WHERE generation_name = 'Post-Modern/Contemporary'),
+    (SELECT id FROM publisher WHERE publisher_name = 'Marvel Comics'),
+    NULL,
+    (SELECT id FROM characters WHERE character_name = 'Hawkeye'),
+    (SELECT id FROM writers WHERE writer_first_name = 'Matt' AND writer_last_name = 'Fraction'),
+    (SELECT id FROM artists WHERE artist_first_name = 'David' AND artist_last_name = 'Aja'),
+    (SELECT id FROM color_artists WHERE color_artists_first_name = 'Matt' AND color_artists_last_name = 'Hollingsworth'),
+    (SELECT id FROM cover_artists WHERE cover_artists_first_name = 'David' AND cover_artists_last_name = 'Aja'),
+    (SELECT id FROM pencilers WHERE pencilers_first_name = 'David' AND pencilers_last_name = 'Aja'),
+    (SELECT id FROM inker WHERE inker_first_name = 'David' AND inker_last_name = 'Aja'),
+    (SELECT id FROM letterer WHERE letterer_first_name = 'Chris' AND letterer_last_name = 'Eliopoulos'),
+    NULL,
+    (SELECT id FROM editor WHERE editor_first_name = 'Sana' AND editor_last_name = 'Amanat'),
+    NULL
+);

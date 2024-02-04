@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const Sequelize = require('sequelize');
 
 const sequelize = process.env.JAWSDB_URL
@@ -11,6 +10,10 @@ const sequelize = process.env.JAWSDB_URL
         dialectOptions: {
             decimalNumbers: true,
         },
+        logging: console.log,
     });
+
+
+console.log(sequelize);
 
 module.exports = sequelize;
