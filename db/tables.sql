@@ -58,12 +58,6 @@ CREATE TABLE letterer (
     letterer_last_name VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE design (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    design_first_name VARCHAR(50) NOT NULL,
-    design_last_name VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE editor (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     editor_first_name VARCHAR(50) NOT NULL,
